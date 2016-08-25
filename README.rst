@@ -1,6 +1,6 @@
-# reactive-xitrum
+Xitrum projects require Java 7+.
 
-o create a new `Xitrum <http://xitrum-framework.github.io/>`_ project,
+To create a new `Xitrum <http://xitrum-framework.github.io/>`_ project,
 clone or download this repo and then run:
 
 ::
