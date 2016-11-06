@@ -7,7 +7,7 @@ import xitrum.annotation.{GET}
 class SiteIndex extends Action with Log {
 
   def execute() {
-    respondFile("public/indefddx.html")
+    respondFile("public/index.html")
   }
 
 }
