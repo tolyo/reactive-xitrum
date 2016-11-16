@@ -1,16 +1,42 @@
 import React from 'react';
+import 'whatwg-fetch';
+
+let app;
 
 export default class App extends React.Component {
+
+    constructor(props) {
+        super(props);
+        this.state = { quote : {} };
+        app = this;
+    }
+
+    update(json) {
+        this.setState({quote : json})
+    }
+
+    getQuote() {
+        fetch('quote')
+        .then((res) => {
+            return res.json();
+        })
+        .then((json) => {
+            app.update(json);
+        });
+    }
+
+    componentWillMount() {
+        app.getQuote();
+    }
+
     render() {
         return (
-            <div id="content">
-                <h1>&nbsp;</h1>
-                <h2>Xitrum Starter powered by React.js</h2>
-                <ul>
-                    <li><a href="http://brunch.io">Brunch homepage</a></li>
-                    <li><a href="https://facebook.github.io/react/">React.js homepage</a></li>
-                    <li><a href="http://xitrum-framework.github.io/">Xitrum homepage</a></li>
-                </ul>
+            <div className="container" id="content">
+                <div className="starter-template">
+                    <h1>{this.state.quote.author}</h1>
+                    <p>{this.state.quote.content}</p>
+                    <button type="button" className="btn btn-primary" onClick={ this.getQuote }>Get quote</button>
+                </div>
             </div>
         );
     }
