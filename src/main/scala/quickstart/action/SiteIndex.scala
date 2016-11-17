@@ -18,7 +18,7 @@ class SiteIndex extends Action with Log {
 class QuoteAction extends Action with Log {
 
   val quoteList = List(
-    Quote("Larry Wall", "The is more than one method to our madness"),
+    Quote("Larry Wall", "There is more than one method to our madness"),
 
     Quote("Chuck Norris", "I only use the Roundhouse kick"),
 
