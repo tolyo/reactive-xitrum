@@ -14,8 +14,8 @@ export default class App extends React.Component {
       return res.json();
     })
     .then((json) => {
-      this.setState({quote : json})
-     });
+      this.setState({quote : json});
+    });
   }
 
   componentWillMount() {
@@ -28,7 +28,13 @@ export default class App extends React.Component {
         <div className="starter-template">
           <h1>{this.state.quote.author}</h1>
           <p>{this.state.quote.content}</p>
-          <button type="button" className="btn btn-primary" onClick={()=>{this.getQuote()}}>Get quote</button>
+          <button type="button"
+                  className="btn btn-primary"
+                  onClick={
+                    () => { this.getQuote(); }
+                  }>
+            Get quote
+          </button>
         </div>
       </div>
     );
