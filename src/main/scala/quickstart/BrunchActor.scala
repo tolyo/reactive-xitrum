@@ -15,6 +15,7 @@ class BrunchActor extends Actor with Log {
   override def receive = {
     case _ =>
       if (!started) {
+        started = true;
         Log.info("Brunch starting")
         val p = Runtime.getRuntime.exec("npm start")
         val s = new Scanner(p.getInputStream)
