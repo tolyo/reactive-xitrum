@@ -5,7 +5,7 @@ export default class App extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = { quote : {}, author: "", newQuote: "" };
+    this.state = { quote : {}, author: '', newQuote: '' };
   }
 
   handleSubmit(e) {
@@ -16,7 +16,7 @@ export default class App extends React.Component {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify(this.state)
-    })
+    });
   }
 
   getQuote() {
@@ -35,12 +35,12 @@ export default class App extends React.Component {
 
   render() {
     return (
-      <div className="container" id="content">
-        <div className="starter-template">
+      <div className='container' id='content'>
+        <div className='starter-template'>
           <h1>{this.state.quote.author}</h1>
           <p>{this.state.quote.content}</p>
-          <button type="button"
-                  className="btn btn-primary"
+          <button type='button'
+                  className='btn btn-primary'
                   onClick={
                     () => { this.getQuote(); }
                   }>
@@ -50,27 +50,27 @@ export default class App extends React.Component {
 
         <hr />
 
-        <form onSubmit={ (e) => this.handleSubmit(e)} className="col-xs-12 col-md-6 col-lg-4">
+        <form onSubmit={ (e) => this.handleSubmit(e)} className='col-xs-12 col-md-6 col-lg-4'>
 
-          <div className="form-group">
-            <label htmlFor="quote">Author: </label>
-            <input className="form-control"
-                   type="text"
-                   id="author"
+          <div className='form-group'>
+            <label htmlFor='quote'>Author: </label>
+            <input className='form-control'
+                   type='text'
+                   id='author'
                    value={this.state.author}
                    onChange={ (e) => this.setState({author: e.target.value}) } />
           </div>
 
-          <div className="form-group">
-            <label htmlFor="quote">New quote: </label>
-            <input className="form-control"
-                   type="text"
-                   id="quote"
+          <div className='form-group'>
+            <label htmlFor='quote'>New quote: </label>
+            <input className='form-control'
+                   type='text'
+                   id='quote'
                    value={this.state.newQuote}
                    onChange={ (e) => this.setState({newQuote: e.target.value}) } />
           </div>
-          <button type="submit"
-                  className="btn btn-primary">
+          <button type='submit'
+                  className='btn btn-primary'>
             Submit
           </button>
         </form>
