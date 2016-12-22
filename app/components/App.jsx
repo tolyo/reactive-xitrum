@@ -1,5 +1,5 @@
-import React from "react";
-import "whatwg-fetch";
+import React from 'react';
+import 'whatwg-fetch';
 
 export default class App extends React.Component {
 
